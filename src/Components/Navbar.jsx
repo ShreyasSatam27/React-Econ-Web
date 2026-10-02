@@ -9,7 +9,7 @@ const Navbar = () => {
           <span className="text-blue-800">S</span>Cart
         </h1>
         <ul className="flex space-x-4 ml-auto pr-5 items-center">
-          <div>
+          <div className="flex items-center">
             <input
               type="text"
               placeholder="Search products..."

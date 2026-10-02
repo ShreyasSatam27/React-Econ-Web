@@ -11,3 +11,13 @@ body{
     top: 11px;
     font-weight: bold;
 }
+@media (max-width: 768px) {
+.card{
+  width: 50% !important;
+}
+}
+@media (max-width: 576px) {
+  .card{
+    width: 100% !important;
+  }
+}
