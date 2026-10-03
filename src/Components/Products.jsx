@@ -6,13 +6,16 @@ const Products = ({ onAddToCart }) => {
   const [Products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   async function fetchProducts() {
-    let url = "https://dummyjson.com/products?limit12";
+    let url = "https://dummyjson.com/products";
     let response = await fetch(url);
     try {
       if (response.ok) {
         let data = await response.json();
-        console.log(data.products);
-        setProducts(data.products);
+        // Shuffle products randomly
+        const shuffledProducts = [...data.products].sort(() => Math.random() - 0.5);
+
+        // Select first 6 products
+        setProducts(shuffledProducts.slice(0, 12));
       }
     } catch (err) {
       console.error("Error fetching products:", err);
@@ -25,7 +28,7 @@ const Products = ({ onAddToCart }) => {
   }, []);
 
   if (loading) {
-    return <div className="text-center py-10">Loading products...</div>;
+    return <div className="text-center text-white py-10">Loading products...</div>;
   }
 
 
