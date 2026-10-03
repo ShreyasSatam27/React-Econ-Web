@@ -1,7 +1,7 @@
 import React from "react";
-
-const Navbar = () => {
-
+import { useState } from "react";
+const Navbar = ({cart}) => {
+ 
   return (
     <>
       <div className="bg-gray-800 h-16 flex items-center content-center">
@@ -24,7 +24,7 @@ const Navbar = () => {
           <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded position-relative">
           <li className="text-white cursor-pointer">Cart</li>
           </button>
-          <span className="CharIcon">0</span>
+          <span className="CharIcon">{cart.length}</span>
         </ul>
       </div>
     </>
